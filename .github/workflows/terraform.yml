@@ -31,8 +31,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+
       - name: Setup terraform with specific version on the runner
         uses: hashicorp/setup-terraform@v4
+        
       - name: Terraform init
         id: init
         run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
